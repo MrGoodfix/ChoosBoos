@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChoosBoos.Core", "ChoosBoos.Core\ChoosBoos.Core.csproj", "{72502748-EE05-48B0-8172-658CA8F904E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChoosBoos.Core.Test", "ChoosBoos.Core.Test\ChoosBoos.Core.Test.csproj", "{2775247C-DD57-42D0-99DE-580B74213FFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72502748-EE05-48B0-8172-658CA8F904E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72502748-EE05-48B0-8172-658CA8F904E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72502748-EE05-48B0-8172-658CA8F904E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72502748-EE05-48B0-8172-658CA8F904E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2775247C-DD57-42D0-99DE-580B74213FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2775247C-DD57-42D0-99DE-580B74213FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2775247C-DD57-42D0-99DE-580B74213FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2775247C-DD57-42D0-99DE-580B74213FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F28176BE-D902-42D3-99B2-02141E72CB3D}
+	EndGlobalSection
+EndGlobal
