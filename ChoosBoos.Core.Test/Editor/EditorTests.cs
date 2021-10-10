@@ -30,5 +30,18 @@ namespace ChoosBoos.Core.Editor
             // Assert
             Assert.NotNull(book);
         }
+
+        [Test]
+        public void ShouldThrowExceptionIfManuscriptIsEmpty()
+        {
+            // Arrange
+            ManuscriptEditor editor = new ManuscriptEditor();
+            editor.Title = "Test";
+            editor.Author = "Me";
+
+            // Act 
+            // Assert
+            Assert.Throws<InvalidOperationException>(() => editor.Prepare());
+        }
     }
 }

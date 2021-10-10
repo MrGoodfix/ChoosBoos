@@ -1,5 +1,6 @@
 ﻿using ChoosBoos.Core.Models;
 using System;
+using System.Collections.Generic;
 
 namespace ChoosBoos.Core.Editor
 {
@@ -34,11 +35,27 @@ namespace ChoosBoos.Core.Editor
                 ManuscriptID = _manuscript.ID
             };
 
+            if (_manuscript.Pages is null)
+            {
+                _manuscript.Pages = new List<PageDraft>();
+                _manuscript.Pages.Add(page);
+                _manuscript.FirstPage = page;
+            }
+            else
+            {
+                _manuscript.Pages.Add(page);
+            }
+
             return new PageEditor(page);
         }
 
         public Book Prepare()
         {
+            if (_manuscript.Pages is null || _manuscript.Pages.Count == 0)
+            {
+                throw new InvalidOperationException("Cannot prepare a book if the manuscript does not have any pages.");
+            }
+
             Book book = new Book();
             book.Author = _manuscript.Author;
             book.Title = _manuscript.Title;
