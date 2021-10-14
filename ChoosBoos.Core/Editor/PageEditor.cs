@@ -8,6 +8,9 @@ namespace ChoosBoos.Core.Editor
     {
         private Page _page;
 
+        public int BookID => _page.BookId;
+        public int PageID => _page.ID;
+
         public string Name
         {
             get => _page.Name;

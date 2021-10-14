@@ -1,4 +1,5 @@
 ﻿using ChoosBoos.Core.Models;
+using ChoosBoos.Core.Utilities;
 using System;
 using System.Collections.Generic;
 
@@ -7,6 +8,7 @@ namespace ChoosBoos.Core.Editor
     public class BookEditor
     {
         private Book _book;
+        private NumberSeq _pageNumberGen;
 
         public string Title
         {
@@ -25,12 +27,14 @@ namespace ChoosBoos.Core.Editor
             _book = new Book();
             Title = "Untitled";
             Author = "Anonymous";
+            _pageNumberGen = new NumberSeq(1);
         }
 
         public PageEditor NewPage(string pageName)
         {
             Page page = new Page
             {
+                ID = _pageNumberGen.GetNext(),
                 Name = pageName,
                 BookId = _book.ID
             };
@@ -58,5 +62,7 @@ namespace ChoosBoos.Core.Editor
             
             return _book;
         }
+
+        
     }
 }
