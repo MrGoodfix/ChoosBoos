@@ -13,7 +13,7 @@ namespace ChoosBoos.Core.Editor
         public void ShouldReturnBook()
         {
             // Arrange
-            ManuscriptEditor editor = new ManuscriptEditor();
+            BookEditor editor = new BookEditor();
             editor.Title = "Test";
             editor.Author = "Me";
 
@@ -29,13 +29,14 @@ namespace ChoosBoos.Core.Editor
 
             // Assert
             Assert.NotNull(book);
+            Assert.That(book.Pages, Has.Count.EqualTo(3));
         }
 
         [Test]
         public void ShouldThrowExceptionIfManuscriptIsEmpty()
         {
             // Arrange
-            ManuscriptEditor editor = new ManuscriptEditor();
+            BookEditor editor = new BookEditor();
             editor.Title = "Test";
             editor.Author = "Me";
 

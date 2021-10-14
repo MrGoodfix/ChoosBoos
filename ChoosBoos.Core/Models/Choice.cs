@@ -9,5 +9,6 @@ namespace ChoosBoos.Core.Models
         public int ID { get; set; }
         public string Text { get; set; }
         public int PageID { get; set; }
+        public int DestinationPageID { get; set; }
     }
 }
