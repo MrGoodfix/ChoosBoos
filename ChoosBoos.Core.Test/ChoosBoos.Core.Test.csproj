@@ -23,4 +23,8 @@
     <ProjectReference Include="..\ChoosBoos.Core\ChoosBoos.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Editor\" />
+  </ItemGroup>
+
 </Project>

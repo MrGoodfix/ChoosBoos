@@ -1,4 +1,5 @@
-﻿using ChoosBoos.Core.Models;
+﻿using ChoosBoos.Core.DataInterface;
+using ChoosBoos.Core.Models;
 using ChoosBoos.Core.Utilities;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ namespace ChoosBoos.Core.Editor
     {
         private Book _book;
         private NumberSeq _pageNumberGen;
+        private IBookDAO _dao;
 
         public string Title
         {
@@ -22,7 +24,14 @@ namespace ChoosBoos.Core.Editor
             set => _book.Author = value;
         }
 
-        public BookEditor()
+        public BookEditor(IBookDAO bookDAO)
+        {
+            _dao = bookDAO;
+            NewBook();
+            _book = _dao.Save(_book);
+        }
+
+        public void NewBook()
         {
             _book = new Book();
             Title = "Untitled";
