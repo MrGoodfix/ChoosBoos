@@ -29,15 +29,16 @@ namespace ChoosBoos.Core.Editor
         {
             // Arrange
             BookEditor editor = new BookEditor(_bookDaoMock.Object);
+            editor.NewBook();
             editor.Title = "Test";
             editor.Author = "Me";
 
-            PageEditor opening = editor.NewPage("Opening");
-            PageEditor badEnding = editor.NewPage("Bad Ending");
-            PageEditor goodEnding = editor.NewPage("Good Ending");
+            Page opening = editor.NewPage("Opening");
+            Page badEnding = editor.NewPage("Bad Ending");
+            Page goodEnding = editor.NewPage("Good Ending");
 
-            opening.NewChoice(badEnding, "Would you like to make a bad decision?");
-            opening.NewChoice(goodEnding, "Would you like to make a good decision?");
+            editor.AddChoice(opening, badEnding, "Would you like to make a bad decision?");
+            editor.AddChoice(opening, goodEnding, "Would you like to make a good decision?");
 
             // Act 
             Book book = editor.Prepare();
@@ -52,6 +53,7 @@ namespace ChoosBoos.Core.Editor
         {
             // Arrange
             BookEditor editor = new BookEditor(_bookDaoMock.Object);
+            editor.NewBook();
             editor.Title = "Test";
             editor.Author = "Me";
 
@@ -65,26 +67,27 @@ namespace ChoosBoos.Core.Editor
         {
             // Arrange
             BookEditor editor = new BookEditor(_bookDaoMock.Object);
+            editor.NewBook();
             editor.Title = "Test";
             editor.Author = "Me";
 
-            PageEditor opening = editor.NewPage("Opening");
-            PageEditor badEnding = editor.NewPage("Bad Ending");
-            PageEditor goodEnding = editor.NewPage("Good Ending");
+            Page opening = editor.NewPage("Opening");
+            Page badEnding = editor.NewPage("Bad Ending");
+            Page goodEnding = editor.NewPage("Good Ending");
 
-            opening.NewChoice(badEnding, "Would you like to make a bad decision?");
-            opening.NewChoice(goodEnding, "Would you like to make a good decision?");
+            editor.AddChoice(opening, badEnding, "Would you like to make a bad decision?");
+            editor.AddChoice(opening, goodEnding, "Would you like to make a good decision?");
 
             // Act 
             Book book = editor.Prepare();
 
             // Assert
             Assert.That(book.ID, Is.EqualTo(1));
-            Assert.That(opening.PageID, Is.EqualTo(1));
+            Assert.That(opening.ID, Is.EqualTo(1));
             Assert.That(opening.BookID, Is.EqualTo(1));
-            Assert.That(badEnding.PageID, Is.EqualTo(2));
+            Assert.That(badEnding.ID, Is.EqualTo(2));
             Assert.That(badEnding.BookID, Is.EqualTo(1));
-            Assert.That(goodEnding.PageID, Is.EqualTo(3));
+            Assert.That(goodEnding.ID, Is.EqualTo(3));
             Assert.That(goodEnding.BookID, Is.EqualTo(1));
         }
     }

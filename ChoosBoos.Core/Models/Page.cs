@@ -8,7 +8,7 @@ namespace ChoosBoos.Core.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public int BookId { get; set; }
+        public int BookID { get; set; }
         public int? ImageID { get; set; }
         public int PageNumber { get; set; }
         public List<Paragraph> Paragraphs { get; set; }
